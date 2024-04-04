@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Idade</title>
+
+</head>
+
+<body>
+
+   <label for="dataNascimento"> Digite a data de nascimento do(a) cliente: <span id="nomeCliente"></span></label>
+   <input type="text" id="dataNascimento" placeholder="DD/MM/YYYY" /> 
+   <button id="check">Checar idade</button>
+   
+   <script>
+
+        document.getElementById('check').addEventListener('click',function(){
+            getAge(document.getElementById('dataNascimento').value)
+        });
+        let palavras;
+        function getAge(dateString){
+            
+            const diaAtual=new Date();
+            const dataDeNascimento = dateSplit(dateString);
+            if(dataDeNascimento=="Invalid Date"){
+                alert("Digite uma data no formato dia/mês/ano!");
+            }
+
+            else{
+
+                var anoNascimento= diaAtual.getFullYear() - dataDeNascimento.getFullYear();
+                var mesNascimento= diaAtual.getMonth() - dataDeNascimento.getMonth();
+                var diaNascimento= diaAtual.getDate() - dataDeNascimento.getDate();
+
+                if(mesNascimento < 0 || (mesNascimento == 0 && diaNascimento < 0)){
+                    anoNascimento--;
+                    palavraAno=anoNascimento>=1? 'anos':'ano'
+                    alert(`O ${nome} tem ${anoNascimento} ${palavraAno} de idade`);
+                }
+
+                else if(mesNascimento > 0 || (mesNascimento == 0 && diaNascimento >= 0)){
+                    palavraAno=anoNascimento>1? 'anos':'ano'
+                    alert(`O ${nome} tem ${anoNascimento} ${palavraAno} de idade`);
+                }
+            }
+        }
+   </script>
+
+   <script src="app.js" defer></script>
+
+</body>
+
+</html>
