@@ -23,7 +23,7 @@ while(aux<=3){
 }
 
     else{
-        soma=((parseInt(soma))+parseInt((notas[aux])));
+        soma=((parseFloat(soma))+parseFloat((notas[aux])));
         aux++;
     }
 }
