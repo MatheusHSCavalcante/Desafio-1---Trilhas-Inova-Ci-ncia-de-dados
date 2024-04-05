@@ -17,4 +17,5 @@ else if(salario>10000 && salario<15000){
 }
 else{
     alert("Não há definição para o aumento no salário");
+    alert("O salário antes do aumento é de R$:" +salario+ ". O salário permanece o mesmo");
 }

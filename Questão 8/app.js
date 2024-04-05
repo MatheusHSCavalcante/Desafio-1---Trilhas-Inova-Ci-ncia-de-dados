@@ -1,7 +1,15 @@
 var salario=[];
-var quantFuncionarios=prompt('Qual é a quantidade de funcionários?');
 let i=1;
 let soma=0;
+var quantFuncionarios=prompt('Qual é a quantidade de funcionários?');
+
+
+while (quantFuncionarios == null || quantFuncionarios.replace(/\s/g, '') == '' ){
+
+    alert('Desculpe, você não forneceu a quantidade de funcionários!');
+    quantFuncionarios=prompt('Qual é a quantidade de funcionários?');
+}
+
 while(i<=quantFuncionarios){
 
     salario[i]=prompt('Digite o salário de cada funcionário:');

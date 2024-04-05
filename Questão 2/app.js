@@ -1,5 +1,4 @@
 var idade= prompt('Olá, qual é a sua idade?');
-//console.log(idade); 
 while (idade== null || idade.replace(/\s/g, '') == '' ){
     alert('Desculpe, você deve fornecer uma idade!');
     document.querySelector('#idadeTeste').textContent = ('Desculpe, nenhuma idade fornecida!');
